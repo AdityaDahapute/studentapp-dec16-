@@ -15,22 +15,22 @@ ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.
 WORKDIR /opt 
 #setting working directory 
 
-RUN unzip apache-tomcat-9.0.113.zip && \
-    rm apache-tomcat-9.0.113.zip
+RUN unzip apache-tomcat-9.0.115.zip && \
+    rm apache-tomcat-9.0.115.zip
 
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt/apache-tomcat-9.0.113/webapps/ 
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/student.war /opt/apache-tomcat-9.0.115/webapps/ 
 #downloading and adding the student.war file to the webapps directory of tomcat server 
 
-ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar /opt/apache-tomcat-9.0.113/lib/ 
+ADD https://s3-us-west-2.amazonaws.com/studentapi-cit/mysql-connector.jar /opt/apache-tomcat-9.0.115/lib/ 
 #downloading and adding mysql-connector.jar to the lib directory of tomcat server 
 
 
-COPY context.xml /opt/apache-tomcat-9.0.113/conf/
+COPY context.xml /opt/apache-tomcat-9.0.115/conf/
 #copying the context.xml file with jdbc string to the conf directory of tomcat server
 
 EXPOSE 8080
 
-RUN chmod +x /opt/apache-tomcat-9.0.113/bin/catalina.sh
+RUN chmod +x /opt/apache-tomcat-9.0.115/bin/catalina.sh
 #giving execute permission to catalina.sh file
 
 CMD ["/opt/apache-tomcat-9.0.113/bin/catalina.sh", "run"]
