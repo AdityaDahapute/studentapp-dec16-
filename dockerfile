@@ -8,8 +8,9 @@ RUN apt-get update && \
     apt-get install unzip openjdk-11-jdk -y 
 #executing commands to update the base image and install required packages 
 
-ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.113/bin/apache-tomcat-9.0.113.zip /opt/ 
+ADD https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.115/bin/apache-tomcat-9.0.115.zip /opt/ 
 #downloading and adding tomcat server to the image 
+
 
 WORKDIR /opt 
 #setting working directory 
