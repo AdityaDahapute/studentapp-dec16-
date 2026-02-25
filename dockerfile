@@ -33,5 +33,5 @@ EXPOSE 8080
 RUN chmod +x /opt/apache-tomcat-9.0.115/bin/catalina.sh
 #giving execute permission to catalina.sh file
 
-CMD ["/opt/apache-tomcat-9.0.113/bin/catalina.sh", "run"]
+CMD ["/opt/apache-tomcat-9.0.115/bin/catalina.sh", "run"]
 #exposing port 8080 and running the tomcat server
