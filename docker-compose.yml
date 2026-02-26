@@ -1,0 +1,27 @@
+services:
+  studentapp:
+    build: .
+    #docker build -t student_image
+    contiainer_name: studentapp_container
+    #network_mode: "host"
+    #volumes:
+        #- vol1:wenapps/
+    ports:
+      - 8080:8080 
+      #docker run -d -p 8080:8080 --name studentapp_container studentapp_image
+#network_mode: "host"
+#we are using host networking to avoid port mapping issues
+#docker network create studentapp_network
+#docker run -d -p 8080:8080 --name studentapp_container --network host studentapp_image
+#volumes:
+#- vo11: webapps/
+#docker create volume voll
+#docker run -d -p 8080:8080 --name studentapp_container -v vol1:/usr/local/tomcat/webapps/ studentapp_image
+#we are using a volume to persist data
+
+
+#if we want to include multiple microservices in this file we need to givw location to the 
+#in the build we can do that for multiple services
+#todos:
+#  build: ../todos/
+#  ports: 
